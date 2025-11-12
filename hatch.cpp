@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <cmath>
+#include <SFML/Graphics.hpp>
 
 #define PI 3.14159265
 
@@ -25,6 +26,7 @@ class Hatch
     int minx = 9999;
     int maxy = -9999;
     int miny = 9999;
+    int point = 0;
     std::vector<std::vector<Point_2>> contoursPoints;
     std::vector<Line_2> PointsOfLines;
     int countOfLines = 0;
@@ -85,10 +87,64 @@ public:
                       << "x2y2:" << PointsOfLines[n].x2 << " " << PointsOfLines[n].y2;
         }
     }
+    void draw_quad(sf::RenderWindow &window)
+    {
+
+        sf::VertexArray quads(sf::Quads, 4);
+        for (int figures = 0; figures < contoursPoints.size(); figures++)
+        {
+            point = 0;
+            for (int points = 0; points < contoursPoints[figures].size(); points++)
+            {
+                quads[point].position = sf::Vector2f(200 + contoursPoints[figures][points].x, 150 + contoursPoints[figures][points].y);
+                quads[point].color = sf::Color::White;
+                point++;
+            }
+        }
+        sf::Vertex vertices[2] =
+            {
+                sf::Vertex(sf::Vector2f(240 + 1, 151 + 5), sf::Color::Red),
+                sf::Vertex(sf::Vector2f(250 + 5, 178 + 10), sf::Color::Red),
+            };
+
+        window.draw(quads);
+        window.draw(vertices, 2, sf::Lines);
+    }
+    void draw()
+    {
+        // create the window
+        sf::RenderWindow window(sf::VideoMode(400, 300), "My window");
+
+        // run the program as long as the window is open
+        while (window.isOpen())
+        {
+            // check all the window's events that were triggered since the last iteration of the loop
+            sf::Event event;
+            while (window.pollEvent(event))
+            {
+                // "close requested" event: we close the window
+                if (event.type == sf::Event::Closed)
+                    window.close();
+            }
+
+            // clear the window with black color
+            window.clear(sf::Color::Cyan);
+
+            // draw everything here...
+            // window.draw(...);
+            draw_quad(window);
+
+            // end the current frame
+            window.display();
+        }
+    }
 };
 int main()
 {
     int angle, step;
-    std::cin >> angle >> step;
+    // std::cin >> angle >> step;
+    angle = 78;
+    step = 1;
     Hatch hatch(angle, step);
+    hatch.draw();
 }

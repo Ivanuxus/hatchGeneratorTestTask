@@ -4,6 +4,8 @@ project(HatchProject)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-add_executable(hatch hatch.cpp)
+find_package(SFML 2.6.1 COMPONENTS graphics REQUIRED)
 
-target_compile_options(hatch PRIVATE -Wall -Wextra)
+add_executable(hatch_generator hatch.cpp)
+
+target_link_libraries(hatch_generator PRIVATE sfml-graphics)

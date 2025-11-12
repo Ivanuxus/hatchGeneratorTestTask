@@ -36,5 +36,14 @@ std::vector<std::vector<Point_2>> contoursPoints = {
 Текстовый пример вывода:
 Line 1: (0,0) -> (10,10)
 Line 2: (0,1) -> (9,10)
-...
-7. Пример штриховки квадрата
+
+
+
+mkdir build
+cd build
+
+cmake -G "MinGW Makefiles" ..
+
+cmake --build .
+
+.\hatch.exe
