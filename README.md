@@ -40,7 +40,7 @@ Line 2: (0,1) -> (9,10)
 
 
 
-cd /c/Users/ISAlferov/Documents/GitHub/hatchGeneratorTestTask1
+cd PATHTO/hatchGeneratorTestTask
 
 rm -rf build
 mkdir build && cd build
