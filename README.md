@@ -39,11 +39,15 @@ Line 2: (0,1) -> (9,10)
 
 
 
-mkdir build
-cd build
+
+cd /c/Users/ISAlferov/Documents/GitHub/hatchGeneratorTestTask1
+
+rm -rf build
+mkdir build && cd build
 
 cmake -G "MinGW Makefiles" ..
 
 cmake --build .
 
-.\hatch.exe
+./hatch_generator.exe --angle 10 --step 0.8
+

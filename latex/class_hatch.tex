@@ -1,0 +1,77 @@
+\doxysection{Hatch Class Reference}
+\hypertarget{class_hatch}{}\label{class_hatch}\index{Hatch@{Hatch}}
+
+
+Класс для генерации и отображения штриховки под заданным углом  
+
+
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_hatch_abc4f8e1d2a8fa3244c0dbdd67fd49d11}{Hatch}} (int angle, double step)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \doxylink{class_hatch}{Hatch}. \end{DoxyCompactList}\item 
+\Hypertarget{class_hatch_ae91de00447ecfd18f3d47bd158fbc7fd}\label{class_hatch_ae91de00447ecfd18f3d47bd158fbc7fd} 
+void {\bfseries print\+Lines} ()
+\begin{DoxyCompactList}\small\item\em Выводит информацию о сгенерированных линиях штриховки в консоль \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hatch_a4d381e6d69a0a5d9798af1dfdc1f7e5f}{draw\+\_\+quad}} (sf\+::\+Render\+Window \&window)
+\begin{DoxyCompactList}\small\item\em Отрисовывает контур и линии штриховки в графическом окне \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{class_hatch_a65f6d85f98084962d6d109c05ca1253f}{draw}} ()
+\begin{DoxyCompactList}\small\item\em Создает и управляет графическим окном для отображения штриховки \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс для генерации и отображения штриховки под заданным углом 
+
+Класс создает систему параллельных линий для заливки прямоугольного контура. Поддерживает различные углы наклона линий и расстояния между ними. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{class_hatch_abc4f8e1d2a8fa3244c0dbdd67fd49d11}\label{class_hatch_abc4f8e1d2a8fa3244c0dbdd67fd49d11} 
+\index{Hatch@{Hatch}!Hatch@{Hatch}}
+\index{Hatch@{Hatch}!Hatch@{Hatch}}
+\doxysubsubsection{\texorpdfstring{Hatch()}{Hatch()}}
+{\footnotesize\ttfamily Hatch\+::\+Hatch (\begin{DoxyParamCaption}\item[{int}]{angle,  }\item[{double}]{step }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Конструктор класса \doxylink{class_hatch}{Hatch}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em angle} & Угол штриховки в градусах \\
+\hline
+{\em step} & Расстояние между линиями штриховки\\
+\hline
+\end{DoxyParams}
+Инициализирует параметры штриховки, вычисляет границы контура и генерирует линии штриховки. 
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{class_hatch_a65f6d85f98084962d6d109c05ca1253f}\label{class_hatch_a65f6d85f98084962d6d109c05ca1253f} 
+\index{Hatch@{Hatch}!draw@{draw}}
+\index{draw@{draw}!Hatch@{Hatch}}
+\doxysubsubsection{\texorpdfstring{draw()}{draw()}}
+{\footnotesize\ttfamily void Hatch\+::draw (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Создает и управляет графическим окном для отображения штриховки 
+
+Создает окно SFML, обрабатывает события и отрисовывает штриховку до тех пор, пока окно не будет закрыто пользователем. \Hypertarget{class_hatch_a4d381e6d69a0a5d9798af1dfdc1f7e5f}\label{class_hatch_a4d381e6d69a0a5d9798af1dfdc1f7e5f} 
+\index{Hatch@{Hatch}!draw\_quad@{draw\_quad}}
+\index{draw\_quad@{draw\_quad}!Hatch@{Hatch}}
+\doxysubsubsection{\texorpdfstring{draw\_quad()}{draw\_quad()}}
+{\footnotesize\ttfamily void Hatch\+::draw\+\_\+quad (\begin{DoxyParamCaption}\item[{sf\+::\+Render\+Window \&}]{window }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+Отрисовывает контур и линии штриховки в графическом окне 
+
+
+\begin{DoxyParams}{Parameters}
+{\em window} & Ссылка на объект окна SFML для отрисовки\\
+\hline
+\end{DoxyParams}
+Метод рисует прямоугольный контур белым цветом и линии штриховки красным цветом. Координаты масштабируются для лучшего отображения в окне. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+hatch.\+cpp\end{DoxyCompactItemize}
